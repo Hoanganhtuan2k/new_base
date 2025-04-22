@@ -1,0 +1,77 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.4 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="26.0.4">
+  <diagram id="OQEIG9iIzogTqL348DrO" name="Page-1">
+    <mxGraphModel dx="1514" dy="854" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="node4" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;order_items&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; created_at: datetime(6)&lt;br&gt; deleted_at: datetime(6)&lt;br&gt; updated_at: datetime(6)&lt;br&gt; order_code: varchar(255)&lt;br&gt; price: decimal(38,2)&lt;br&gt; product_code: bigint&lt;br&gt; product_name: varchar(255)&lt;br&gt; quantity: int&lt;br&gt; total_price: decimal(38,2)&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; id: bigint&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;" parent="1" vertex="1">
+          <mxGeometry x="-110" y="500" width="213" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="node1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;orders&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; created_at: datetime(6)&lt;br/&gt; deleted_at: datetime(6)&lt;br/&gt; updated_at: datetime(6)&lt;br/&gt; customer_address: varchar(255)&lt;br/&gt; customer_name: varchar(255)&lt;br/&gt; customer_phone: varchar(255)&lt;br/&gt; order_code: varchar(255)&lt;br/&gt; total_price: decimal(38,2)&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; id: bigint&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;" parent="1" vertex="1">
+          <mxGeometry x="340" y="500" width="242" height="256" as="geometry" />
+        </mxCell>
+        <mxCell id="node2" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;product_type&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; created_at: datetime(6)&lt;br/&gt; deleted_at: datetime(6)&lt;br/&gt; updated_at: datetime(6)&lt;br/&gt; name: varchar(255)&lt;br/&gt; type_code: varchar(255)&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; id: bigint&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;" parent="1" vertex="1">
+          <mxGeometry x="190" y="120" width="187" height="184" as="geometry" />
+        </mxCell>
+        <mxCell id="node0" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;products&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; created_at: datetime(6)&lt;br&gt; deleted_at: datetime(6)&lt;br&gt; updated_at: datetime(6)&lt;br&gt; description: varchar(255)&lt;br&gt; product_code: varchar(255)&lt;br&gt; product_name: varchar(255)&lt;br&gt;product_type_code: varchar(255)&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; id: bigint&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;" parent="1" vertex="1">
+          <mxGeometry x="-210" y="108" width="213" height="232" as="geometry" />
+        </mxCell>
+        <mxCell id="node3" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;unit_types&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; created_at: datetime(6)&lt;br/&gt; deleted_at: datetime(6)&lt;br/&gt; updated_at: datetime(6)&lt;br/&gt; code: varchar(255)&lt;br/&gt; name: varchar(255)&lt;br/&gt; product_type_code: varchar(255)&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; id: bigint&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;" parent="1" vertex="1">
+          <mxGeometry x="600" y="80" width="207" height="208" as="geometry" />
+        </mxCell>
+        <mxCell id="edge0" value="" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#595959;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="node4" target="node0" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="150.02" y="450" as="sourcePoint" />
+            <mxPoint x="50.02000000000001" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label2" value="" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;" parent="edge0" vertex="1" connectable="0">
+          <mxGeometry x="-50" y="522" as="geometry" />
+        </mxCell>
+        <mxCell id="OaGNYjn_tzmblknNeNo8-1" value="" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#595959;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="node3" target="node2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="570" y="260" />
+              <mxPoint x="520" y="260" />
+              <mxPoint x="520" y="258" />
+            </Array>
+            <mxPoint x="-3" y="734" as="sourcePoint" />
+            <mxPoint x="-3" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OaGNYjn_tzmblknNeNo8-2" value="product_id:id" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=default;" parent="OaGNYjn_tzmblknNeNo8-1" vertex="1" connectable="0">
+          <mxGeometry x="-60" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="OaGNYjn_tzmblknNeNo8-4" value="product_type_code:type_code" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="OaGNYjn_tzmblknNeNo8-1" vertex="1" connectable="0">
+          <mxGeometry x="0.0283" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OaGNYjn_tzmblknNeNo8-7" value="" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#595959;exitX=0.984;exitY=0.81;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="node0" target="node2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="90" y="296" />
+              <mxPoint x="90" y="256" />
+            </Array>
+            <mxPoint x="303" y="250" as="sourcePoint" />
+            <mxPoint x="80" y="256" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OaGNYjn_tzmblknNeNo8-9" value="product_type_code:type_code" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="OaGNYjn_tzmblknNeNo8-7" vertex="1" connectable="0">
+          <mxGeometry x="0.0283" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OaGNYjn_tzmblknNeNo8-10" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.004;entryY=0.539;entryDx=0;entryDy=0;entryPerimeter=0;curved=0;" parent="1" source="node4" target="node1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GgN9c44ic7l0O34MMWFI-1" value="order_code:order_code" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="OaGNYjn_tzmblknNeNo8-10" vertex="1" connectable="0">
+          <mxGeometry x="-0.5086" y="1" relative="1" as="geometry">
+            <mxPoint x="42" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
