@@ -381,4 +381,16 @@ public class CommonUtil {
             return new HashMap<>();
         }
     }
+
+    public static String getContentImgType(String imageName) {
+        if (imageName.endsWith(".png")) {
+            return "image/png";
+        } else if (imageName.endsWith(".jpg") || imageName.endsWith(".jpeg")) {
+            return "image/jpeg";
+        } else if (imageName.endsWith(".gif")) {
+            return "image/gif";
+        } else {
+            return "application/octet-stream";
+        }
+    }
 }
