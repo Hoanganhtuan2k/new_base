@@ -1,0 +1,61 @@
+<paths>
+    <path name="/channels">
+        <!-- Tạo kênh mới -->
+        <post>
+            <summary>Create a channel (FB/IG)</summary>
+            <requestBody>
+                <content>
+                    <mediaType name="application/json">
+                        <schema type="object">
+                            <property name="type" type="string" enum="FACEBOOK,INSTAGRAM"/>
+                            <property name="pageId" type="string"/>
+                            <property name="accessToken" type="string"/>
+                            <property name="tokenExpiry" type="string" format="date-time"/>
+                        </schema>
+                    </mediaType>
+                </content>
+            </requestBody>
+            <responses>
+                <response code="200">
+                    <description>Channel created</description>
+                </response>
+            </responses>
+        </post>
+
+        <!-- Lấy danh sách kênh -->
+        <get>
+            <summary>Get user channels</summary>
+            <responses>
+                <response code="200">
+                    <description>List of channels</description>
+                </response>
+            </responses>
+        </get>
+    </path>
+
+    <path name="/channels/{id}">
+        <get>
+            <summary>Get channel detail by ID</summary>
+            <parameters>
+                <parameter name="id" in="path" required="true" schemaType="integer"/>
+            </parameters>
+            <responses>
+                <response code="200">
+                    <description>Channel detail</description>
+                </response>
+            </responses>
+        </get>
+
+        <delete>
+            <summary>Delete a channel</summary>
+            <parameters>
+                <parameter name="id" in="path" required="true" schemaType="integer"/>
+            </parameters>
+            <responses>
+                <response code="200">
+                    <description>Deleted successfully</description>
+                </response>
+            </responses>
+        </delete>
+    </path>
+</paths>
