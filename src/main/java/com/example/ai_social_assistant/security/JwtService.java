@@ -1,34 +1,58 @@
 package com.example.ai_social_assistant.security;
 
-import com.example.ai_social_assistant.dto.response.response.AuthenticationResponse;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.security.SignatureException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+import java.security.GeneralSecurityException;
+import java.security.KeyFactory;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
-import java.security.NoSuchAlgorithmException;
+import java.security.PrivateKey;
+import java.security.PublicKey;
+import java.security.spec.PKCS8EncodedKeySpec;
+import java.security.spec.X509EncodedKeySpec;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service
 public class JwtService {
+    private static final Logger log = LoggerFactory.getLogger(JwtService.class);
     private static final long JWT_TOKEN_VALIDITY = 15 * 24 * 60 * 60 * 1000L; // 15 ngày, đơn vị ms
     private final KeyPair keyPair;
 
-    public JwtService() throws NoSuchAlgorithmException {
-        this.keyPair = generateKeyPair();
+    public JwtService(@Value("${jwt.private-key:}") String privateKeyPem,
+                      @Value("${jwt.public-key:}") String publicKeyPem) throws GeneralSecurityException {
+        this.keyPair = resolveKeyPair(privateKeyPem, publicKeyPem);
     }
 
-    private KeyPair generateKeyPair() throws NoSuchAlgorithmException {
+    private static KeyPair resolveKeyPair(String privateKeyPem, String publicKeyPem) throws GeneralSecurityException {
+        boolean hasPrivate = privateKeyPem != null && !privateKeyPem.isBlank();
+        boolean hasPublic = publicKeyPem != null && !publicKeyPem.isBlank();
+        if (hasPrivate && hasPublic) {
+            KeyFactory keyFactory = KeyFactory.getInstance("RSA");
+            PrivateKey privateKey = keyFactory.generatePrivate(new PKCS8EncodedKeySpec(decodePem(privateKeyPem)));
+            PublicKey publicKey = keyFactory.generatePublic(new X509EncodedKeySpec(decodePem(publicKeyPem)));
+            return new KeyPair(publicKey, privateKey);
+        }
+        if (hasPrivate || hasPublic) {
+            throw new IllegalStateException("Both jwt.private-key and jwt.public-key must be configured");
+        }
+        log.warn("jwt.private-key/jwt.public-key not configured: using an ephemeral RSA key pair, tokens will be invalidated on restart");
         KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
         generator.initialize(4096);
         return generator.generateKeyPair();
+    }
+
+    private static byte[] decodePem(String pem) {
+        String body = pem.replaceAll("-----(BEGIN|END) [A-Z ]+-----", "").replaceAll("\\s", "");
+        return Base64.getDecoder().decode(body);
     }
 
     public String extractUsername(String token) {
